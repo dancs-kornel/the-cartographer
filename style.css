@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300&display=swap');
+
+html {
+    font-family: 'Kreon', serif;
+    font-weight: bold;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+#background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+#fields {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 0.25rem;
+
+    width: 35rem;
+    height: 35rem;
+
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+}
+
+.cell {
+    background-image: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.cell[data-tile="empty"] {
+    background-image: url('assets/tiles/base_tile.svg');
+}
+
+.cell[data-tile="mountain"] {
+    background-image: url('assets/tiles/mountain_tile.svg');
+}
+
+.cell[data-tile="forest"] {
+    background-image: url('assets/tiles/forest_tile.svg');
+}
+
+.cell[data-tile="town"] {
+    background-image: url('assets/tiles/town_tile.svg');
+}
+
+.cell[data-tile="farm"] {
+    background-image: url('assets/tiles/farm_tile.svg');
+}
+
+.cell[data-tile="water"] {
+    background-image: url('assets/tiles/water_tile.svg');
+}
+
+#missions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5vmin;
+    place-items: center;
+}
+
+.mission {
+    position: relative;
+    cursor: help;
+}
+
+.mission.active::after {
+    content: '🟢';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.points-display{
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+}
+
+div[data-mission] {
+    width: 30vmin;
+    height: 10vmin;
+
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+#next-shape {
+    width: 10rem;
+    height: 12rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+}
+
+#shape-panel > div > .time {
+    width: 100%;
+    text-align: right;
+}
+
+#next-shape-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.25rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.dragging {
+    pointer-events: none;
+    cursor: grabbing !important;
+    position: fixed;
+    z-index: 1000;
+}
+
+#points {
+    font-size: 1.5rem;
+}
+
+#points > .seasons{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25em;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.spring, .summer, .autumn, .winter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 4em;
+    height: 4em;
+
+    color: white;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+
+    border-width: 0.15em;
+    border-style: solid;
+}
+
+.spring, .summer, .autumn, .winter > p, .spring, .summer, .autumn, .winter > span {
+    text-align: center;
+}
+
+.spring {
+    background-color: #7ebc74;
+    border-color: #528c48;
+}
+
+.summer {
+    background-color: #fae985;
+    border-color: #d8bc3f;
+}
+
+.autumn {
+    background-color: #e3bf99;
+    border-color: #66411d;
+}
+
+.winter {
+    background-color: #7bcfe9;
+    border-color: #4d8ea2;
+}
+
+#shape-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+#shape-buttons {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    height: 12rem;
+}
+
+#rotate-shape, #flip-shape {
+    font-size: 1.5rem;
+    width: 6em;
+    height: 2.5em;
+
+    font-family: 'Kreon', serif;
+    font-weight: bold;
+    background-color: #f3f3f3;
+    border-radius: 0.5em;
+    border: none;
+}

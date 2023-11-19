@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <img src="assets/theme.svg" id="background-img">
+    <div class="left-panel">
+        <h1>Burgonya térkép</h1>
+        <div id="fields"></div>
+    </div>
+    <div class="right-panel">
+        <section id="points">
+            <div class="seasons">
+                <div class="spring">
+                    <p>Tavasz:<br><span class="points">0</span> pont</p>
+                </div>
+                <div class="summer">
+                    <p>Nyár:<br><span class="points">0</span> pont</p>
+                </div>
+                <div class="autumn">
+                    <p>Ősz:<br><span class="points">0</span> pont</p>
+                </div>
+                <div class="winter">
+                    <p>Tél:<br><span class="points">0</span> pont</p>
+                </div>
+            </div>
+            <div class="total">
+                Összesen: <span class="points">0</span> pont
+            </div>
+        </section>
+        <h2>Jelenlegi évszak: <span id="current-season">Tavasz</span></h2>
+        <section id="missions">
+            <div class="mission" data-mission="0">
+                <div class="points-display">0 pont</div>
+            </div>
+            <div class="mission" data-mission="0">
+                <div class="points-display">0 pont</div>
+            </div>
+            <div class="mission" data-mission="0">
+                <div class="points-display">0 pont</div>
+            </div>
+            <div class="mission" data-mission="0">
+                <div class="points-display">0 pont</div>
+            </div>
+        </section>
+        <h2>Évszakból hátralévő idő: <span id="time-remaining">7</span></h2>
+        <section id="shape-panel">
+            <div id="shape-buttons">
+                Lehejezendő elem:
+                <button id="rotate-shape">Forgatás</button>
+                <button id="flip-shape">Tükrözés</button>
+            </div>
+            <div id="next-shape">
+                <div class="time"><span id="shape-time">0</span>🕓</div>
+                <div id="next-shape-matrix" class="draggable"></div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
