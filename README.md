@@ -13,6 +13,9 @@ The game unfolds over four seasons, with each season comprising seven time units
 ### Scoring
 At the beginning of each game, four random mission cards (A, B, C, D) are selected to determine the points players can earn. Two missions are active at any given time, marked by a green circle, and are based on the current season. At the end of each season, the points for the active missions are evaluated and added to the player's total score.
 
-## Installation
-- Clone the repository.
-- Open the index.html file in your preferred web browser.
+## Try it out!
+[Click here to open in browser](https://dancs-kornel.github.io/the-cartographer/)
+### Or
+1. **Clone the repository** - `git clone https://github.com/dancs-kornel/the-cartographer.git`
+1. **Navigate to the project directory** - `cd the-cartographer`
+1. **Open index.html in your preferred web browser** - `open index.html`
